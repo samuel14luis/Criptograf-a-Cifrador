@@ -317,16 +317,14 @@ public class ClaveString extends ClaveGeneral implements Serializable, ClaveInte
                 String ci, cj;
                 ci = vector[i];
                 cj = vector[j];
-                //System.out.println(ci + "  " + cj);
-                if (ci.equals(cj) ) {
+               if (ci.equals(cj) ) {
                     _valido = false;
                     m.mostrarMensaje(
                             "No es válida porque " + ci + " y " + cj + " son iguales,\n deben ser diferentes.",
                             "/imagenes/icons8-Cerrar ventana-25.png",
                             "La clave no es válida");
                     break;
-                }
-                if (ci.length() != cj.length()) {
+                }else if (ci.length() != cj.length()) {
                     _valido = false;
                     m.mostrarMensaje(
                             "No es válida porque " + ci + " y " + cj + " son de largo distinto,\n deben tener el mismo largo",
@@ -336,14 +334,28 @@ public class ClaveString extends ClaveGeneral implements Serializable, ClaveInte
                 }
                 
                 //sobre el null
-                if (ci.equals(_null) || cj.equals(_null) || ci.length() != _null.length()) {
+                if (ci.equals(_null)) {
                     _valido = false;
                     //agregé solo el mostrar mensaje
                     m.mostrarMensaje(
-                            "No es válida porque " + ci + " y " + cj + " son de largo distinto,\n deben tener el mismo largo",
+                            "El null coindide con " + ci,
                             "/imagenes/icons8-Cerrar ventana-25.png",
-                            "La clave no es válida");
+                            "El null no es válido");
                     System.out.println("    el null " + _null + " no tiene la misma longitud o coindide con alguno de estos: " + ci + " - " + cj);
+                    break;
+                }else if (cj.equals(_null)) {
+                    _valido = false;
+                    m.mostrarMensaje(
+                            "El null coindide con " + cj,
+                            "/imagenes/icons8-Cerrar ventana-25.png",
+                            "El null no es válido");
+                    break;
+                }else if (ci.length() != _null.length()) {
+                    _valido = false;
+                    m.mostrarMensaje(
+                            "El null " + _null + " no tiene la misma longitud.",
+                            "/imagenes/icons8-Cerrar ventana-25.png",
+                            "El null no es válido");
                     break;
                 }
             }

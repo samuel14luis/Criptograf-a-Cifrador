@@ -67,7 +67,7 @@
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="jlblNombreClaveMatriz" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="183" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" pref="235" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -216,7 +216,8 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jlblLengthNombre" min="-2" pref="64" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jcheckRealTimeSimulation" min="-2" pref="141" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jtxtNullClave" min="-2" pref="274" max="-2" attributes="0"/>
@@ -267,7 +268,10 @@
                               <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jlblLengthNombre" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlblLengthNombre" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="jcheckRealTimeSimulation" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jbtnmNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -279,7 +283,7 @@
                               <Component id="jrbtnModificable" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -354,6 +358,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -411,9 +416,22 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="50"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="toolTipText" type="java.lang.String" value="m&#xe1;ximo 50 caracteres"/>
                 <Property name="verticalAlignment" type="int" value="1"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jcheckRealTimeSimulation">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="RealTime Simulation"/>
+                <Property name="toolTipText" type="java.lang.String" value="S&#xf3;lo en esta pesta&#xf1;a"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcheckRealTimeSimulationActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

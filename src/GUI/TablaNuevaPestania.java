@@ -67,6 +67,7 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jlblLengthNombre = new javax.swing.JLabel();
+        jcheckRealTimeSimulation = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconImage(getIconImage());
@@ -156,6 +157,7 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
         jtxtNombre.setEditable(false);
         jtxtNombre.setBackground(new java.awt.Color(255, 255, 255));
         jtxtNombre.setForeground(new java.awt.Color(102, 102, 102));
+        jtxtNombre.setToolTipText("");
         jtxtNombre.setBorder(null);
         jtxtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -184,8 +186,18 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
         jlblLengthNombre.setForeground(new java.awt.Color(102, 102, 102));
         jlblLengthNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jlblLengthNombre.setText("50");
-        jlblLengthNombre.setToolTipText("");
+        jlblLengthNombre.setToolTipText("máximo 50 caracteres");
         jlblLengthNombre.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jcheckRealTimeSimulation.setBackground(new java.awt.Color(255, 255, 255));
+        jcheckRealTimeSimulation.setSelected(true);
+        jcheckRealTimeSimulation.setText("RealTime Simulation");
+        jcheckRealTimeSimulation.setToolTipText("Sólo en esta pestaña");
+        jcheckRealTimeSimulation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcheckRealTimeSimulationActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,7 +224,8 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
                             .addComponent(jtxtNombre))
                         .addGap(18, 18, 18)
                         .addComponent(jlblLengthNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jcheckRealTimeSimulation, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jtxtNullClave, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
@@ -251,7 +264,9 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlblLengthNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlblLengthNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcheckRealTimeSimulation))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtnmNuevo)
@@ -260,7 +275,7 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
                             .addComponent(jbtnReset))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jrbtnModificable)))
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -280,7 +295,7 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
                 .addGap(4, 4, 4)
                 .addComponent(jlblNombreClaveMatriz)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -307,6 +322,10 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
         if (JOptionPane.showConfirmDialog(this, "¿Desea resetear los datos?, perderá los cambios que haya realizado.") == 0) {
             modelo = clave.getTableModel(clave.isEditable());
             jtblTabla.setModel(modelo);
+            jtxtNombre.setText(clave.getNombre());
+            jtxtNullClave.setText(clave.getNullClave());
+            jtxtNullMatriz.setText(clave.getNullMatriz());
+            jrbtnModificable.setSelected(clave.isEditable());
         }
     }//GEN-LAST:event_jbtnResetActionPerformed
 
@@ -354,6 +373,10 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jtxtNombreKeyTyped
 
+    private void jcheckRealTimeSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcheckRealTimeSimulationActionPerformed
+        ponerLengthNombre();
+    }//GEN-LAST:event_jcheckRealTimeSimulationActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -368,6 +391,7 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
     private javax.swing.JButton jbtnmExportar;
     private javax.swing.JButton jbtnmModificar;
     private javax.swing.JButton jbtnmNuevo;
+    private javax.swing.JCheckBox jcheckRealTimeSimulation;
     private javax.swing.JLabel jlblLengthNombre;
     private javax.swing.JLabel jlblNombreClaveMatriz;
     private javax.swing.JRadioButton jrbtnModificable;
@@ -416,6 +440,7 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
         jtxtNullMatriz.setText(clave.getNullMatriz());
         
         jlblLengthNombre.setText(jtxtNombre.getText().length()+"");
+        jcheckRealTimeSimulation.setVisible(_editable && clave.isEditable());//muestra el checkbtn si la ventana será editable y la clave también lo es.
     }
 
     @Override
@@ -428,5 +453,8 @@ public class TablaNuevaPestania extends javax.swing.JFrame {
 
     private void ponerLengthNombre() {
         jlblLengthNombre.setText(jtxtNombre.getText().length()+"");
+        if(jcheckRealTimeSimulation.isSelected()){
+            jlblNombreClaveMatriz.setText(jtxtNombre.getText());
+        }
     }
 }

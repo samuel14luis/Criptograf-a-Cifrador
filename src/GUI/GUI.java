@@ -105,7 +105,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jtxtClaro = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        jpClaveStringEnEstaVentana = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtblTabla = new javax.swing.JTable();
         jlblNombreClaveMatriz = new javax.swing.JLabel();
@@ -420,8 +420,8 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz"));
+        jpClaveStringEnEstaVentana.setBackground(new java.awt.Color(255, 255, 255));
+        jpClaveStringEnEstaVentana.setBorder(javax.swing.BorderFactory.createTitledBorder("Matriz"));
 
         jtblTabla.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         jtblTabla.setForeground(new java.awt.Color(51, 51, 60));
@@ -445,7 +445,7 @@ public class GUI extends javax.swing.JFrame {
         jlblNombreClaveMatriz.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jlblNombreClaveMatriz.setForeground(new java.awt.Color(153, 153, 153));
         jlblNombreClaveMatriz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblNombreClaveMatriz.setText("Convertir número decimal a hexadecimal");
+        jlblNombreClaveMatriz.setText("a");
 
         jButton1.setText("cerrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -454,23 +454,23 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jpClaveStringEnEstaVentanaLayout = new javax.swing.GroupLayout(jpClaveStringEnEstaVentana);
+        jpClaveStringEnEstaVentana.setLayout(jpClaveStringEnEstaVentanaLayout);
+        jpClaveStringEnEstaVentanaLayout.setHorizontalGroup(
+            jpClaveStringEnEstaVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jlblNombreClaveMatriz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jpClaveStringEnEstaVentanaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jpClaveStringEnEstaVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpClaveStringEnEstaVentanaLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1)))
-                .addContainerGap())
+                .addGap(4, 4, 4))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        jpClaveStringEnEstaVentanaLayout.setVerticalGroup(
+            jpClaveStringEnEstaVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpClaveStringEnEstaVentanaLayout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(jlblNombreClaveMatriz)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -487,15 +487,14 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jpClaveStringEnEstaVentana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jpClaveStringEnEstaVentana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(3, 3, 3))
         );
 
@@ -503,7 +502,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -644,7 +643,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxtClaroKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        abrirTabla(true);
+        abrirTabla(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -658,7 +657,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -679,6 +677,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jlblFavoritos;
     private javax.swing.JLabel jlblNombreClaveMatriz;
     private javax.swing.JLabel jlblResetClaves;
+    private javax.swing.JPanel jpClaveStringEnEstaVentana;
     private javax.swing.JTable jtblTabla;
     private javax.swing.JTextField jtxtClaro;
     private javax.swing.JTextArea jtxtResultado;
@@ -769,7 +768,7 @@ public class GUI extends javax.swing.JFrame {
             actualizarPublicClave();
             llenarTabla(_clave);
         }
-        setBounds(getX(), getY(), (b ? 1177 : 548), 446);
+        setBounds(getX(), getY(), (b ? 1278 : 548), 446);
         setLocationRelativeTo(null);
         _tablaAbierta = b;
     }
